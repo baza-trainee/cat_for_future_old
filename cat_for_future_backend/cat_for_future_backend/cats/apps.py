@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class CatsConfig(AppConfig):
-    default_auto_field = "django.db.models.BigAutoField"
-    name = "cats"
+    name = "cat_for_future_backend.cats"
+    verbose_name = _("Cats")
