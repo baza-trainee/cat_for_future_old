@@ -11,4 +11,4 @@ class CatAdmin(admin.ModelAdmin):
     date_hierarchy = "date_created"
 
 
-admin.site.register(Cat, CatAdmin)  # Register the Cat model in the administrative interface
+# admin.site.register(Cat, CatAdmin)  # Register the Cat model in the administrative interface
