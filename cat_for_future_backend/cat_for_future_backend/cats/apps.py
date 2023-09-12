@@ -1,6 +1,7 @@
 from django.apps import AppConfig
+from django.utils.translation import gettext_lazy as _
 
 
 class CatsConfig(AppConfig):
-    default_auto_field = "django.db.models.BigAutoField"
-    name = "cats"
+    name = "cat_for_future_backend.cats"
+    verbose_name = _("Cats")
