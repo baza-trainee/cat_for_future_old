@@ -90,8 +90,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "cat_for_future_backend.users",
-    'cat_for_future_backend.cats',
-    # Your stuff: custom apps go here
+    "cat_for_future_backend.histories",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
