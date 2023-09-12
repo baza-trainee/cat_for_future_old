@@ -9,6 +9,3 @@ class CatAdmin(admin.ModelAdmin):
     search_fields = ("name",)
     list_editable = ("age", "booking_status")
     date_hierarchy = "date_created"
-
-
-# admin.site.register(Cat, CatAdmin)  # Register the Cat model in the administrative interface
