@@ -351,5 +351,6 @@ SPECTACULAR_SETTINGS = {
     "SERVE_PERMISSIONS": ["rest_framework.permissions.AllowAny"],
 }
 
-# Your stuff...
-# ------------------------------------------------------------------------------
+# PROJECT CONSTANTS
+
+MAX_SUBSCRIPTION_PER_USER = 2

@@ -1,7 +1,6 @@
 from django.db.models import Manager
 from django.core.exceptions import ValidationError
-
-MAX_SUBSCRIPTION_PER_USER = 2
+from django.conf import settings
 
 
 class SubscriptionManager(Manager):
@@ -9,10 +8,10 @@ class SubscriptionManager(Manager):
         # Check if the user already has reached the maximum subscriptions
         current_subscriptions = self.filter(user=user).count()
 
-        if current_subscriptions >= MAX_SUBSCRIPTION_PER_USER:
+        if current_subscriptions >= settings.MAX_SUBSCRIPTION_PER_USER:
             print("DEBUG: User has reached the maximum number of subscriptions.")
             raise ValidationError(
-                f"User has reached the maximum number of subscriptions ({MAX_SUBSCRIPTION_PER_USER})."
+                f"User has reached the maximum number of subscriptions ({settings.MAX_SUBSCRIPTION_PER_USER})."
             )
 
         # Create a new subscription
