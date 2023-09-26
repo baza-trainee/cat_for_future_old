@@ -19,7 +19,7 @@ class Subscription(models.Model):
     date_created = DateTimeField(_("Дата підписки"), auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user.email} subscribed to {self.cat.name} on {self.created_at}"
+        return f"{self.user.email} subscribed to {self.cat.name} on {self.date_created}"
 
     objects = SubscriptionManager()
 

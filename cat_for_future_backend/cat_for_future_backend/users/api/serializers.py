@@ -10,10 +10,11 @@ User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer[UserType]):
+    has_max_subscriptions = serializers.SerializerMethodField()
+
     class Meta:
         model = User
-        fields = ["name", "city", "phone_number", "email", "url"]
-        has_max_subscriptions = serializers.SerializerMethodField()
+        fields = ["name", "city", "phone_number", "email", "url", "has_max_subscriptions"]
 
     def get_has_max_subscriptions(self, obj):
         # Define your maximum subscription count threshold here
