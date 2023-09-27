@@ -9,7 +9,6 @@ class SubscriptionManager(Manager):
         current_subscriptions = self.filter(user=user).count()
 
         if current_subscriptions >= settings.MAX_SUBSCRIPTION_PER_USER:
-            print("DEBUG: User has reached the maximum number of subscriptions.")
             raise ValidationError(
                 f"User has reached the maximum number of subscriptions ({settings.MAX_SUBSCRIPTION_PER_USER})."
             )
