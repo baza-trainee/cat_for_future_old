@@ -90,7 +90,9 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "cat_for_future_backend.users",
+    "cat_for_future_backend.cats",
     "cat_for_future_backend.histories",
+    "cat_for_future_backend.subscriptions",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -289,7 +291,7 @@ SOCIALACCOUNT_FORMS = {"signup": "cat_for_future_backend.users.forms.UserSocialS
 # django-rest-framework - https://www.django-rest-framework.org/api-guide/settings/
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": ("rest_framework_simplejwt.authentication.JWTAuthentication",),
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.AllowAny",),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
@@ -349,5 +351,6 @@ SPECTACULAR_SETTINGS = {
     "SERVE_PERMISSIONS": ["rest_framework.permissions.AllowAny"],
 }
 
-# Your stuff...
-# ------------------------------------------------------------------------------
+# PROJECT CONSTANTS
+
+MAX_SUBSCRIPTION_PER_USER = 2

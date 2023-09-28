@@ -12,5 +12,5 @@ class Cat(models.Model):
     booking_status = models.BooleanField(_("Стан заброньованості"), default=False)
     photo = models.ImageField(_("Фото"), upload_to="photos/", blank=True, null=True)
 
-    def __str(self):
+    def __str__(self):
         return self.name
