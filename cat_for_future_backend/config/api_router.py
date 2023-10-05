@@ -11,10 +11,10 @@ if settings.DEBUG:
 else:
     router = SimpleRouter()
 
-router.register("users", UserViewSet)
-router.register("cats", CatViewSet)
-router.register("histories", HistoryViewSet)
-router.register("subscriptions", SubscriptionViewSet)
+router.register("users", UserViewSet, basename="users")
+router.register("cats", CatViewSet, basename="cats")
+router.register("histories", HistoryViewSet, basename="histories")
+router.register("subscriptions", SubscriptionViewSet, basename="subscriptions")
 
 app_name = "api"
 urlpatterns = router.urls
